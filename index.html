@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Indus Rise DTC — The collegiate entrepreneurship, startup, and innovation club. Ideas into impact.">
+  <meta name="keywords" content="Indus Rise, Indus Rise DTC, entrepreneurship club, college startup club, student founders, ideation, innovation">
+  <title>Indus Rise DTC — Think Bold. Build Beyond.</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Floating Side Dot Indicators (Desktop) -->
+  <nav class="side-dots-nav" aria-label="Section indicators">
+    <button class="side-dot active" data-target="hero" data-label="Home" aria-label="Scroll to Home"></button>
+    <button class="side-dot" data-target="about" data-label="Who We Are" aria-label="Scroll to About"></button>
+    <button class="side-dot" data-target="pillars" data-label="What We Do" aria-label="Scroll to Pillars"></button>
+    <button class="side-dot" data-target="events" data-label="Events" aria-label="Scroll to Events"></button>
+    <button class="side-dot" data-target="vision-mission" data-label="Vision & Mission" aria-label="Scroll to Vision"></button>
+    <button class="side-dot" data-target="team" data-label="Team" aria-label="Scroll to Team"></button>
+    <button class="side-dot" data-target="join" data-label="Join Us" aria-label="Scroll to Join"></button>
+  </nav>
+
+  <!-- Fixed Site Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Indus Rise Homepage">
+        <img src="assets/logo.png" alt="Indus Rise DTC Logo" class="brand-logo-img">
+        <div class="logo-text">
+          <span class="logo-title">INDUS</span>
+          <span class="logo-sub">RISE DTC</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pillars">What We Do</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#vision-mission">Vision & Mission</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+
+      <!-- Nav CTA & Mobile Hamburger -->
+      <div class="nav-actions">
+        <a href="#join" class="btn btn-primary open-join-modal">
+          Join Indus
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-links">
+      <li>
+        <a href="#hero">
+          <span>Home</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#about">
+          <span>About Us</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#pillars">
+          <span>What We Do</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#events">
+          <span>Events & Activities</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#vision-mission">
+          <span>Vision & Mission</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#team">
+          <span>Leadership Team</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </a>
+      </li>
+      <li>
+        <a href="#join" class="open-join-modal" style="background: rgba(245, 161, 107, 0.2); color: var(--color-peach-500);">
+          <span>Join the Club</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <section id="hero" class="hero-section">
+    <div class="hero-container">
+      <!-- Left Column: Copy & CTAs -->
+      <div class="hero-content reveal">
+        <div class="badge-tag">
+          <span class="badge-dot"></span>
+          <span>IDEAS INTO IMPACT</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Think Bold.<br>
+          <span class="highlight">Build Beyond.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          A vibrant collegiate community for thinkers, builders, and future founders. Turning campus curiosity into real-world ventures.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#about" class="btn btn-primary">
+            Explore Indus
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+          <a href="#events" class="btn btn-outline">
+            Our Events
+          </a>
+        </div>
+
+        <a href="#about" class="scroll-cue">
+          <span class="scroll-arrow">↓</span>
+          <span>SCROLL TO EXPLORE</span>
+        </a>
+      </div>
+
+      <!-- Right Column: Interactive Brand Showcase Canvas -->
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="visual-canvas">
+          <div class="visual-card-top">
+            <span class="visual-metric-badge">● COHORT '26 ACTIVE</span>
+            <span style="font-size: 0.75rem; color: var(--color-slate-400);">ENTREPRENEURSHIP CELL</span>
+          </div>
+
+          <div class="visual-center-art">
+            <div class="hero-emblem-wrap">
+              <img src="assets/logo.png" alt="Indus Rise DTC Logo" class="hero-emblem-img">
+            </div>
+            <h3 style="font-family: var(--font-heading); color: var(--color-white); font-size: 1.35rem; margin-top: 0.5rem; letter-spacing: 0.05em;">
+              INDUS RISE DTC
+            </h3>
+            <p style="font-size: 0.825rem; color: var(--color-slate-300); max-width: 280px;">
+              From raw problem statements to market-ready prototypes.
+            </p>
+          </div>
+
+          <div class="visual-card-bottom">
+            <div class="stat-item">
+              <span class="stat-num">30+</span>
+              <span class="stat-label">Events & Sprints</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">150+</span>
+              <span class="stat-label">Active Members</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">12+</span>
+              <span class="stat-label">MVPs Built</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MARQUEE TICKER RIBBON
+       ======================================================================== -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-item">IDEATE <span class="dot"></span> INNOVATE <span class="dot"></span> BUILD <span class="dot"></span> RISE <span class="dot"></span> EMPOWER <span class="dot"></span> LAUNCH <span class="dot"></span> VALIDATE <span class="dot"></span> SCALE</div>
+      <div class="ticker-item">IDEATE <span class="dot"></span> INNOVATE <span class="dot"></span> BUILD <span class="dot"></span> RISE <span class="dot"></span> EMPOWER <span class="dot"></span> LAUNCH <span class="dot"></span> VALIDATE <span class="dot"></span> SCALE</div>
+      <div class="ticker-item">IDEATE <span class="dot"></span> INNOVATE <span class="dot"></span> BUILD <span class="dot"></span> RISE <span class="dot"></span> EMPOWER <span class="dot"></span> LAUNCH <span class="dot"></span> VALIDATE <span class="dot"></span> SCALE</div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SECTION 01: ABOUT US (WHO WE ARE)
+       ======================================================================== -->
+  <section id="about" class="section theme-peach">
+    <div class="section-container">
+      <div class="about-grid">
+        <!-- Story Copy -->
+        <div class="about-text-col reveal">
+          <span class="section-tag">01 — WHO WE ARE</span>
+          <h2 class="section-title">Big ideas begin with curious minds.</h2>
+          <p class="section-desc">
+            We bring together students who want to explore entrepreneurship, turn ideas into action, and build things that matter.
+          </p>
+          <p style="color: var(--color-slate-700); font-size: 1rem;">
+            Whether you want to launch a tech venture, design innovative consumer goods, or discover how early-stage ventures operate, Indus Rise DTC provides the community, resources, and peer network to accelerate your learning curve.
+          </p>
+          <div style="margin-top: 0.5rem;">
+            <a href="#pillars" class="btn btn-dark">
+              Discover What We Do ↓
+            </a>
+          </div>
+        </div>
+
+        <!-- Distinct Features Grid -->
+        <div class="about-features reveal reveal-delay-2">
+          <div class="about-feature-item">
+            <div class="about-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="about-feature-title">Student-First Community</h4>
+              <p class="about-feature-desc">Form interdisciplinary teams combining engineering, design, marketing, and business strategy.</p>
+            </div>
+          </div>
+
+          <div class="about-feature-item">
+            <div class="about-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <div>
+              <h4 class="about-feature-title">Actionable Mentorship</h4>
+              <p class="about-feature-desc">Regular interactive sessions with startup founders, VC associates, and alumni entrepreneurs.</p>
+            </div>
+          </div>
+
+          <div class="about-feature-item">
+            <div class="about-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div>
+              <h4 class="about-feature-title">Zero-to-One Mindset</h4>
+              <p class="about-feature-desc">We emphasize rapid user testing, market feedback loops, and customer discovery over boring theory.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 02: WHAT WE DO (CORE PILLARS)
+       ======================================================================== -->
+  <section id="pillars" class="section theme-white">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">02 — WHAT WE DO</span>
+        <h2 class="section-title">From ideas to action.</h2>
+        <p class="section-desc">
+          Our initiatives are structured into three continuous pillars designed to take you from a raw insight to a launched initiative.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1: Ideation -->
+        <div class="pillar-card reveal reveal-delay-1">
+          <div class="pillar-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"></path>
+              <path d="M10 22h4"></path>
+              <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+            </svg>
+          </div>
+          <h3 class="pillar-name">Ideation</h3>
+          <p class="pillar-desc">
+            Think, question, experiment. We host ideathons, problem-discovery workshops, and customer interview drills to validate genuine market needs.
+          </p>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Problem Validation</span>
+            <span class="pillar-tag">Design Thinking</span>
+            <span class="pillar-tag">Market Discovery</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Innovation -->
+        <div class="pillar-card reveal reveal-delay-2">
+          <div class="pillar-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+            </svg>
+          </div>
+          <h3 class="pillar-name">Innovation</h3>
+          <p class="pillar-desc">
+            Build, test, improve. Rapid MVP sprints, code hackathons, and no-code prototyping tools that turn blueprints into functional software and physical demos.
+          </p>
+          <div class="pillar-tags">
+            <span class="pillar-tag">MVP Sprints</span>
+            <span class="pillar-tag">Tech Hackathons</span>
+            <span class="pillar-tag">Rapid Prototyping</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Growth -->
+        <div class="pillar-card reveal reveal-delay-3">
+          <div class="pillar-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="pillar-name">Growth</h3>
+          <p class="pillar-desc">
+            Launch, pitch, rise. Showcase your startups at pitch competitions, connect with early-stage angel funds, and prepare for incubator accelerator cohorts.
+          </p>
+          <div class="pillar-tags">
+            <span class="pillar-tag">Pitch Competitions</span>
+            <span class="pillar-tag">Investor Connect</span>
+            <span class="pillar-tag">Incubation Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 03: EVENTS & ACTIVITIES
+       ======================================================================== -->
+  <section id="events" class="section theme-dark">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">03 — EVENTS & ACTIVITIES</span>
+        <h2 class="section-title">Where ambition meets execution.</h2>
+        <p class="section-desc">
+          Participate in high-energy workshops, pitch battles, and speaker sessions designed to give you practical startup competencies.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="events-filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All Events</button>
+        <button class="filter-btn" data-filter="workshop">Workshops</button>
+        <button class="filter-btn" data-filter="competition">Competitions</button>
+        <button class="filter-btn" data-filter="speaker">Speaker Sessions</button>
+      </div>
+
+      <!-- Events Cards Grid -->
+      <div class="events-grid">
+        <!-- Event 1 -->
+        <div class="event-card reveal reveal-delay-1" data-category="workshop">
+          <div class="event-card-header">
+            <span class="event-type-badge">Workshop</span>
+            <span class="event-date">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Nov 18, 2026
+            </span>
+          </div>
+          <h3 class="event-title">The Zero-to-One Founder Blueprint</h3>
+          <p class="event-desc">
+            A hands-on workshop guiding students on market validation, creating lean business models, and identifying early adopters.
+          </p>
+          <div class="event-footer">
+            <span class="event-location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Campus Auditorium
+            </span>
+            <button class="btn btn-primary open-join-modal" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Register</button>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="event-card reveal reveal-delay-2" data-category="competition">
+          <div class="event-card-header">
+            <span class="event-type-badge">Competition</span>
+            <span class="event-date">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Dec 05, 2026
+            </span>
+          </div>
+          <h3 class="event-title">Indus Rise Pitch Tank '26</h3>
+          <p class="event-desc">
+            Our flagship startup pitch challenge where top student teams present their MVPs in front of active venture capitalists and angel investors.
+          </p>
+          <div class="event-footer">
+            <span class="event-location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Innovation Hub
+            </span>
+            <button class="btn btn-primary open-join-modal" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">RSVP Now</button>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="event-card reveal reveal-delay-3" data-category="speaker">
+          <div class="event-card-header">
+            <span class="event-type-badge">Speaker Session</span>
+            <span class="event-date">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Dec 19, 2026
+            </span>
+          </div>
+          <h3 class="event-title">Fireside Chat: Campus to Series A</h3>
+          <p class="event-desc">
+            An intimate AMA with alumni who raised venture capital straight out of engineering college. Unfiltered truths about the startup journey.
+          </p>
+          <div class="event-footer">
+            <span class="event-location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Seminar Hall 2
+            </span>
+            <button class="btn btn-primary open-join-modal" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Attend</button>
+          </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="event-card reveal reveal-delay-4" data-category="workshop">
+          <div class="event-card-header">
+            <span class="event-type-badge">Workshop</span>
+            <span class="event-date">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Jan 12, 2027
+            </span>
+          </div>
+          <h3 class="event-title">Ship an AI MVP in 48 Hours</h3>
+          <p class="event-desc">
+            A weekend sprint leveraging modern APIs and rapid web prototyping tools to build and deploy your first live product with real users.
+          </p>
+          <div class="event-footer">
+            <span class="event-location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Computer Lab 3
+            </span>
+            <button class="btn btn-primary open-join-modal" style="padding: 0.4rem 0.9rem; font-size: 0.8rem;">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 04: VISION & MISSION
+       ======================================================================== -->
+  <section id="vision-mission" class="section theme-peach">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">04 — VISION & MISSION</span>
+        <h2 class="section-title">Empowering the next generation.</h2>
+        <p class="section-desc">
+          Building a resilient bridge between academic learning and high-impact entrepreneurial endeavors.
+        </p>
+      </div>
+
+      <div class="vision-mission-grid">
+        <!-- Vision Card -->
+        <div class="vm-card vision reveal reveal-delay-1">
+          <div class="vm-icon-bubble">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <span class="vm-label">OUR VISION</span>
+          <h3 class="vm-title">To build the most vibrant, founder-friendly campus community in the region.</h3>
+          <p class="vm-body">
+            We envision an ecosystem where every student feels empowered to identify pressing societal and technological challenges, formulate bold solutions, and take the fearless leap from learner to founder.
+          </p>
+        </div>
+
+        <!-- Mission Card -->
+        <div class="vm-card mission reveal reveal-delay-2">
+          <div class="vm-icon-bubble">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <span class="vm-label">OUR MISSION</span>
+          <h3 class="vm-title">Actionable toolkits, founder mentorship, and peer collaboration.</h3>
+          <p class="vm-body">
+            Our mission is to democratize entrepreneurship across engineering and business streams. We provide the mentorship, physical sandbox, and investor exposure needed to transform dorm-room ideas into scalable ventures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 05: MEET THE TEAM
+       ======================================================================== -->
+  <section id="team" class="section theme-dark">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">05 — LEADERSHIP & TEAM</span>
+        <h2 class="section-title">The minds powering Indus Rise.</h2>
+        <p class="section-desc">
+          Passionate student leaders and faculty mentors committed to fostering entrepreneurship across our campus.
+        </p>
+      </div>
+
+      <!-- Faculty Mentor Spotlight -->
+      <div class="team-faculty-highlight reveal">
+        <div class="team-avatar">FA</div>
+        <div class="team-info">
+          <h4>Faculty Coordinator & Advisory Board</h4>
+          <span class="role-title">Entrepreneurship & Innovation Cell</span>
+          <p style="color: var(--color-slate-300); font-size: 0.925rem; margin-top: 0.5rem; max-width: 650px;">
+            Providing institutional guidance, industry partnerships, and incubation backing to ensure our students have real access to capital and patents.
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Student Team Grid -->
+      <div class="team-grid">
+        <!-- Lead 1 -->
+        <div class="team-card reveal reveal-delay-1">
+          <div class="member-avatar">IR</div>
+          <div>
+            <h4 class="member-name">President</h4>
+            <span class="member-role">Club President & Strategy</span>
+            <p class="member-department">2nd Year · Computer Science</p>
+          </div>
+          <div class="member-socials">
+            <a href="#" class="social-icon-link" aria-label="LinkedIn Profile">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" class="social-icon-link" aria-label="Twitter / X">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Lead 2 -->
+        <div class="team-card reveal reveal-delay-2">
+          <div class="member-avatar">TL</div>
+          <div>
+            <h4 class="member-name">Tech Lead</h4>
+            <span class="member-role">Technical Head & Product Sprints</span>
+            <p class="member-department">2nd Year · Information Tech</p>
+          </div>
+          <div class="member-socials">
+            <a href="#" class="social-icon-link" aria-label="GitHub Profile">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="#" class="social-icon-link" aria-label="LinkedIn Profile">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Lead 3 -->
+        <div class="team-card reveal reveal-delay-3">
+          <div class="member-avatar">OP</div>
+          <div>
+            <h4 class="member-name">Operations Lead</h4>
+            <span class="member-role">Head of Events & Logistics</span>
+            <p class="member-department">2nd Year · Electronics</p>
+          </div>
+          <div class="member-socials">
+            <a href="#" class="social-icon-link" aria-label="LinkedIn Profile">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Lead 4 -->
+        <div class="team-card reveal reveal-delay-4">
+          <div class="member-avatar">PR</div>
+          <div>
+            <h4 class="member-name">Outreach Lead</h4>
+            <span class="member-role">Marketing & Community PR</span>
+            <p class="member-department">2nd Year · Business & Data</p>
+          </div>
+          <div class="member-socials">
+            <a href="#" class="social-icon-link" aria-label="LinkedIn Profile">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" class="social-icon-link" aria-label="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 06: JOIN INDUS (CALL TO ACTION)
+       ======================================================================== -->
+  <section id="join" class="section theme-dark" style="padding-top: 2rem;">
+    <div class="section-container">
+      <div class="cta-box reveal">
+        <div class="badge-tag" style="background: rgba(245, 161, 107, 0.2);">
+          <span>ADMISSIONS & COHORT REGISTRATION</span>
+        </div>
+        <h2 class="cta-headline">Ready to turn your ambition into action?</h2>
+        <p class="cta-subtitle">
+          Whether you have a breakthrough concept or simply want to learn how modern ventures are created from scratch, Indus Rise is your launching pad.
+        </p>
+        <button class="btn btn-primary open-join-modal" style="padding: 0.85rem 2rem; font-size: 1.05rem;">
+          Join Indus Rise Today
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="section-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="assets/logo.png" alt="Indus Rise Logo" class="brand-logo-img">
+            <div class="logo-text">
+              <span class="logo-title">INDUS</span>
+              <span class="logo-sub">RISE DTC</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            The collegiate entrepreneurship and innovation hub. Think bold. Build beyond. Ideas into impact.
+          </p>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Indus Rise</a></li>
+            <li><a href="#pillars">What We Do</a></li>
+            <li><a href="#events">Upcoming Events</a></li>
+            <li><a href="#vision-mission">Vision & Mission</a></li>
+            <li><a href="#team">Leadership</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>Domains</h5>
+          <ul class="footer-links">
+            <li><a href="#pillars">Ideation & Discovery</a></li>
+            <li><a href="#pillars">MVP Development</a></li>
+            <li><a href="#pillars">Venture Pitching</a></li>
+            <li><a href="#events">Founder Series</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>Connect</h5>
+          <ul class="footer-links">
+            <li><a href="mailto:indusrise@college.edu">indusrise@college.edu</a></li>
+            <li><a href="#">LinkedIn Community</a></li>
+            <li><a href="#">Instagram @indusrise_dtc</a></li>
+            <li><a href="#">GitHub Organization</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Indus Rise DTC. All rights reserved. Built with pride by the Student Tech Team.</p>
+        <p style="color: var(--color-slate-500);">Collegiate Entrepreneurship & Innovation Cell</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ========================================================================
+       MODAL: JOIN INDUS REGISTRATION FORM
+       ======================================================================== -->
+  <div id="join-modal" class="modal-overlay" aria-modal="true" role="dialog" aria-labelledby="modal-heading">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <div class="modal-header">
+        <h3 id="modal-heading" class="modal-title">Join Indus Rise DTC</h3>
+        <p class="modal-desc">Fill in your details below to express your interest in joining our student founder & innovation cohort.</p>
+      </div>
+
+      <form id="indus-join-form">
+        <div class="form-group">
+          <label class="form-label" for="full-name">Full Name *</label>
+          <input type="text" id="full-name" class="form-input" placeholder="e.g. Alex Sharma" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">College Email Address *</label>
+          <input type="email" id="email" class="form-input" placeholder="e.g. alex@student.college.edu" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="academic-year">Academic Year *</label>
+            <select id="academic-year" class="form-select" required>
+              <option value="" disabled selected>Select Year</option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="department">Branch / Dept *</label>
+            <input type="text" id="department" class="form-input" placeholder="e.g. CSE / ECE / BBA" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="interest">Primary Domain of Interest *</label>
+          <select id="interest" class="form-select" required>
+            <option value="" disabled selected>Choose your interest</option>
+            <option value="Tech / Product Development">Technical / Code / MVP Building</option>
+            <option value="Design & UI/UX">Design & Creative Media</option>
+            <option value="Operations & Events">Event Operations & Management</option>
+            <option value="Marketing & Outreach">PR, Socials & Community</option>
+            <option value="Aspiring Founder">I have an idea / Aspiring Founder</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="pitch">Tell us briefly about what excites you about startups:</label>
+          <textarea id="pitch" class="form-textarea" placeholder="What are you curious about or building? (Optional)"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; padding: 0.85rem;">
+          Submit Membership Application ↗
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Feedback -->
+  <div id="toast-notice" class="toast-notice" role="status" aria-live="polite">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5A16B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span class="toast-text">Application submitted successfully!</span>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
