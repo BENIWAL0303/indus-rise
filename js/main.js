@@ -1,48 +1,121 @@
 /**
- * INDUS ASCENDS — MASTER JAVASCRIPT CONTROLLER
- * Handles scroll effects, navigation, interactive filters, modal dialogs, and animations.
+ * INDUS RISE DTC — MASTER JAVASCRIPT CONTROLLER
+ * Handles page preloader, multi-page navigation, ambient canvas graphics,
+ * animated counters, scroll reveals, interactive filters, accordions, and modals.
  */
 
+// --------------------------------------------------------------------------
+// 1. Interactive Branded Preloader
+// --------------------------------------------------------------------------
+(function initPreloader() {
+  const preloader = document.getElementById('preloader');
+  const progressBar = document.getElementById('preloader-progress-bar');
+  const preloaderStatus = document.getElementById('preloader-status-text');
+
+  if (!preloader) return;
+
+  const statusPhrases = [
+    'INITIALIZING ECOSYSTEM...',
+    'CONNECTING FOUNDER NETWORK...',
+    'SYNCING INNOVATION LABS...',
+    'WELCOME TO INDUS RISE'
+  ];
+
+  let phraseIndex = 0;
+  let progress = 15;
+
+  const progressInterval = setInterval(() => {
+    progress += Math.floor(Math.random() * 20) + 10;
+    if (progress > 90) progress = 90;
+    if (progressBar) progressBar.style.width = `${progress}%`;
+
+    if (preloaderStatus && phraseIndex < statusPhrases.length - 1) {
+      phraseIndex++;
+      preloaderStatus.textContent = statusPhrases[phraseIndex];
+    }
+  }, 120);
+
+  function dismissPreloader() {
+    clearInterval(progressInterval);
+    if (progressBar) progressBar.style.width = '100%';
+    if (preloaderStatus) preloaderStatus.textContent = statusPhrases[statusPhrases.length - 1];
+
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      document.body.classList.add('page-loaded');
+      setTimeout(() => {
+        if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+      }, 700);
+    }, 280);
+  }
+
+  window.addEventListener('load', dismissPreloader);
+  // Fallback safety timeout so user is never blocked
+  setTimeout(dismissPreloader, 1400);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Elements
+  // Common Elements
   const header = document.querySelector('.site-header');
-  const progressBar = document.getElementById('scroll-progress');
+  const scrollProgressBar = document.getElementById('scroll-progress');
   const mobileToggle = document.querySelector('.mobile-toggle');
   const mobileDrawer = document.querySelector('.mobile-drawer');
   const backToTopBtn = document.getElementById('back-to-top');
+  const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
   const sideDots = document.querySelectorAll('.side-dot');
-  const navLinks = document.querySelectorAll('.nav-links a');
   const sections = document.querySelectorAll('section[id], header[id]');
   const filterBtns = document.querySelectorAll('.filter-btn');
   const eventCards = document.querySelectorAll('.event-card');
   const modal = document.getElementById('join-modal');
   const modalCloseBtn = document.querySelector('.modal-close-btn');
   const openModalBtns = document.querySelectorAll('.open-join-modal');
-  const joinForm = document.getElementById('indus-join-form');
+  const joinForms = document.querySelectorAll('#indus-join-form, #dedicated-join-form');
   const toast = document.getElementById('toast-notice');
 
   /* --------------------------------------------------------------------------
-     1. Scroll Progress Bar & Header Scrolled State
+     2. Multi-Page Active Navigation Highlighting
+     ----------------------------------------------------------------------- */
+  function highlightCurrentPage() {
+    let currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    if (currentPath === '') currentPath = 'index.html';
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      // Extract filename
+      const linkPath = href.split('#')[0].split('/').pop();
+      if (linkPath === currentPath) {
+        link.classList.add('active');
+      } else if (currentPath === 'index.html' && (href === '#' || href === '#hero' || href === 'index.html')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+  highlightCurrentPage();
+
+  /* --------------------------------------------------------------------------
+     3. Scroll Progress Bar & Sticky Header
      ----------------------------------------------------------------------- */
   function updateScrollState() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const progressPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
 
-    if (progressBar) {
-      progressBar.style.width = `${progressPercent}%`;
+    if (scrollProgressBar) {
+      scrollProgressBar.style.width = `${progressPercent}%`;
     }
 
-    // Toggle header backdrop shadow
     if (header) {
-      if (scrollTop > 50) {
+      if (scrollTop > 40) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
     }
 
-    // Toggle Back-To-Top button
     if (backToTopBtn) {
       if (scrollTop > 400) {
         backToTopBtn.classList.add('visible');
@@ -58,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateScrollState();
 
   /* --------------------------------------------------------------------------
-     2. Back to Top Button
+     4. Back to Top Button
      ----------------------------------------------------------------------- */
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
@@ -70,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     3. Mobile Navigation Drawer
+     5. Mobile Navigation Drawer
      ----------------------------------------------------------------------- */
   if (mobileToggle && mobileDrawer) {
     mobileToggle.addEventListener('click', () => {
@@ -79,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close drawer when clicking any link inside it
     const drawerLinks = mobileDrawer.querySelectorAll('a');
     drawerLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -89,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
         mobileDrawer.classList.remove('open');
@@ -100,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     4. Scroll-Triggered Reveal Animations (Intersection Observer)
+     6. Scroll-Triggered Reveal Animations
      ----------------------------------------------------------------------- */
   const revealElements = document.querySelectorAll('.reveal');
 
@@ -109,42 +180,28 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          // Once animated, no need to keep observing this element
           observer.unobserve(entry.target);
         }
       });
     }, {
       root: null,
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.12,
+      rootMargin: '0px 0px -30px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
   } else {
-    // Fallback for older browsers
     revealElements.forEach(el => el.classList.add('is-visible'));
   }
 
   /* --------------------------------------------------------------------------
-     5. Active Section Tracking (Nav links & Side Dots)
+     7. Side Dots Navigation (In-page anchor navigation on index.html)
      ----------------------------------------------------------------------- */
-  if ('IntersectionObserver' in window && sections.length > 0) {
+  if ('IntersectionObserver' in window && sections.length > 0 && sideDots.length > 0) {
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const currentId = entry.target.getAttribute('id');
-
-          // Update header desktop links
-          navLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === `#${currentId}`) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
-
-          // Update floating side dots
           sideDots.forEach(dot => {
             if (dot.getAttribute('data-target') === currentId) {
               dot.classList.add('active');
@@ -160,21 +217,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sections.forEach(sec => sectionObserver.observe(sec));
+
+    sideDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const targetId = dot.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
   }
 
-  // Side dots click to scroll
-  sideDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const targetId = dot.getAttribute('data-target');
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+  /* --------------------------------------------------------------------------
+     8. Animated Stats Number Counters
+     ----------------------------------------------------------------------- */
+  const counterElements = document.querySelectorAll('[data-count]');
+
+  if (counterElements.length > 0 && 'IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          const countTo = parseInt(target.getAttribute('data-count'), 10);
+          const suffix = target.getAttribute('data-suffix') || '+';
+          const prefix = target.getAttribute('data-prefix') || '';
+          const duration = 1800; // ms
+          const startTime = performance.now();
+
+          function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const currentCount = Math.floor(easeProgress * countTo);
+
+            target.textContent = `${prefix}${currentCount}${suffix}`;
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              target.textContent = `${prefix}${countTo}${suffix}`;
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+          observer.unobserve(target);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    counterElements.forEach(el => counterObserver.observe(el));
+  }
 
   /* --------------------------------------------------------------------------
-     6. Event Category Filter
+     9. Interactive Event Filter & Search
      ----------------------------------------------------------------------- */
   if (filterBtns.length > 0 && eventCards.length > 0) {
     filterBtns.forEach(btn => {
@@ -198,7 +295,58 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     7. Join Indus Modal Dialog
+     10. Interactive Accordion (FAQs)
+     ----------------------------------------------------------------------- */
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(headerBtn => {
+    headerBtn.addEventListener('click', () => {
+      const item = headerBtn.closest('.accordion-item');
+      if (!item) return;
+
+      const body = item.querySelector('.accordion-body');
+      const isActive = item.classList.contains('active');
+
+      // Close all sibling items in the same group
+      const parentGroup = item.closest('.accordion-group');
+      if (parentGroup) {
+        parentGroup.querySelectorAll('.accordion-item').forEach(sibling => {
+          if (sibling !== item) {
+            sibling.classList.remove('active');
+            const siblingBody = sibling.querySelector('.accordion-body');
+            if (siblingBody) siblingBody.style.maxHeight = null;
+          }
+        });
+      }
+
+      // Toggle current
+      if (isActive) {
+        item.classList.remove('active');
+        if (body) body.style.maxHeight = null;
+      } else {
+        item.classList.add('active');
+        if (body) body.style.maxHeight = `${body.scrollHeight}px`;
+      }
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     11. Interactive Card Spotlight Glow (Mouse-Follow Effect)
+     ----------------------------------------------------------------------- */
+  const glowCards = document.querySelectorAll('.card-glow-spot');
+
+  glowCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--glow-x', `${x}px`);
+      card.style.setProperty('--glow-y', `${y}px`);
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     12. Join Indus Modal Dialog
      ----------------------------------------------------------------------- */
   function openModal() {
     if (modal) {
@@ -218,8 +366,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   openModalBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal();
+      // If the button is a direct link to join.html and user is on a mobile device or prefers direct navigation, allow link; else open modal
+      if (modal) {
+        e.preventDefault();
+        openModal();
+      }
     });
   });
 
@@ -228,11 +379,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (modal) {
-    // Click outside dialog to close
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
+      if (e.target === modal) closeModal();
     });
 
     document.addEventListener('keydown', (e) => {
@@ -243,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     8. Join Form Submission & Toast Feedback
+     13. Join Form Submission & Feedback Toast
      ----------------------------------------------------------------------- */
   function showToast(message) {
     if (!toast) return;
@@ -253,26 +401,133 @@ document.addEventListener('DOMContentLoaded', () => {
     toast.classList.add('show');
     setTimeout(() => {
       toast.classList.remove('show');
-    }, 4500);
+    }, 4800);
   }
 
-  if (joinForm) {
-    joinForm.addEventListener('submit', (e) => {
+  joinForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const submitBtn = joinForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.innerHTML : 'Submit';
 
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Submitting application...';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Submitting application...';
+      }
 
-      // Simulate network request
       setTimeout(() => {
         closeModal();
-        joinForm.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        showToast('🎉 Application submitted! Welcome to the Indus Rise DTC journey.');
-      }, 900);
+        form.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+        showToast('🎉 Application received! Welcome to the Indus Rise DTC founder journey.');
+      }, 950);
     });
+  });
+
+  /* --------------------------------------------------------------------------
+     14. Ambient Constellation Particle Canvas Animation
+     ----------------------------------------------------------------------- */
+  const canvas = document.getElementById('ambient-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    const particleCount = 42;
+    const maxDistance = 120;
+    let mouse = { x: null, y: null };
+
+    function resizeCanvas() {
+      width = canvas.width = canvas.parentElement.offsetWidth || window.innerWidth;
+      height = canvas.height = canvas.parentElement.offsetHeight || 600;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    canvas.parentElement.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    canvas.parentElement.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.65;
+        this.vy = (Math.random() - 0.5) * 0.65;
+        this.radius = Math.random() * 2 + 1.2;
+        this.color = Math.random() > 0.4 ? 'rgba(245, 161, 107, 0.7)' : 'rgba(255, 255, 255, 0.5)';
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        // Subtle mouse interaction
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 100) {
+            this.x -= (dx / dist) * 0.8;
+            this.y -= (dy / dist) * 0.8;
+          }
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Connect near particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < maxDistance) {
+            const alpha = (1 - dist / maxDistance) * 0.22;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(245, 161, 107, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
   }
 });

@@ -1640,7 +1640,535 @@ button, input, select, textarea {
     transition: none !important;
   }
   .ticker-track { animation: none; }
-  .ascend-icon-ring { animation: none; }
+  .ascend-icon-ring,
+  .hero-emblem-wrap { animation: none; }
   .badge-dot { animation: none; }
   .scroll-arrow { animation: none; }
+  .preloader-ring,
+  .preloader-ring-outer { animation: none; }
 }
+
+/* ==========================================================================
+   19. Interactive Preloader Animation
+   ========================================================================== */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-navy-950);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-emblem {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--color-peach-500);
+  border-right-color: #ff7a38;
+  animation: preloader-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.preloader-ring-outer {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 2px dashed rgba(245, 161, 107, 0.3);
+  animation: preloader-spin-reverse 4s linear infinite;
+}
+
+.preloader-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--color-peach-500);
+  box-shadow: var(--shadow-glow);
+}
+
+@keyframes preloader-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes preloader-spin-reverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.preloader-text {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  color: var(--color-white);
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preloader-bar-wrap {
+  width: 180px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-peach-500), #ff7a38);
+  border-radius: var(--border-radius-full);
+  transition: width 0.35s ease;
+}
+
+/* ==========================================================================
+   20. Ambient Particle Canvas & Visual Graphics
+   ========================================================================== */
+.ambient-canvas-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ambient-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.glow-orb-peach {
+  background: radial-gradient(circle, var(--color-peach-500) 0%, transparent 70%);
+}
+
+.glow-orb-navy {
+  background: radial-gradient(circle, var(--color-navy-light) 0%, transparent 70%);
+}
+
+/* ==========================================================================
+   21. Subpage Banner & Breadcrumbs
+   ========================================================================== */
+.page-banner {
+  position: relative;
+  padding-top: calc(var(--nav-height) + 3.5rem);
+  padding-bottom: 4.5rem;
+  background: radial-gradient(circle at 85% 20%, rgba(245, 161, 107, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 15% 80%, rgba(24, 43, 79, 0.8) 0%, transparent 55%),
+              var(--color-navy-900);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.page-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  color: var(--color-slate-400);
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumbs a {
+  color: var(--color-slate-300);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-peach-500);
+}
+
+.breadcrumbs span.sep {
+  color: var(--color-slate-500);
+}
+
+.breadcrumbs span.current {
+  color: var(--color-peach-500);
+  font-weight: 600;
+}
+
+.page-banner-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.page-banner-desc {
+  font-size: 1.15rem;
+  color: var(--color-slate-300);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   22. Home Page Hub: Section Teaser Portal Cards
+   ========================================================================== */
+.section-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .section-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.preview-card {
+  background: rgba(24, 43, 79, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--color-peach-500);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.preview-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 161, 107, 0.5);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 161, 107, 0.15);
+  background: rgba(24, 43, 79, 0.85);
+}
+
+.preview-card:hover::before {
+  transform: scaleX(1);
+}
+
+.preview-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.preview-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-md);
+  background: rgba(245, 161, 107, 0.15);
+  color: var(--color-peach-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.preview-card:hover .preview-card-icon {
+  background: var(--color-peach-500);
+  color: var(--color-navy-950);
+}
+
+.preview-card-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-peach-500);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--border-radius-full);
+  background: rgba(245, 161, 107, 0.1);
+  border: 1px solid rgba(245, 161, 107, 0.25);
+}
+
+.preview-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.preview-card-desc {
+  font-size: 0.925rem;
+  color: var(--color-slate-300);
+  line-height: 1.6;
+}
+
+.preview-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-peach-500);
+  margin-top: auto;
+  transition: gap var(--transition-fast);
+}
+
+.preview-card:hover .preview-card-link {
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   23. Timeline UI Component (About page & Roadmaps)
+   ========================================================================== */
+.timeline-track {
+  position: relative;
+  padding-left: 2.75rem;
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 11px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-peach-500) 0%, rgba(245, 161, 107, 0.2) 100%);
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 2.75rem;
+}
+
+.timeline-node:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.75rem;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-navy-900);
+  border: 3px solid var(--color-peach-500);
+  box-shadow: 0 0 14px rgba(245, 161, 107, 0.4);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  padding: 1.75rem;
+  transition: all var(--transition-base);
+}
+
+.timeline-content:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(245, 161, 107, 0.4);
+  transform: translateX(4px);
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-peach-500);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+  font-size: 0.925rem;
+  color: var(--color-slate-300);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   24. Accordion UI Component (FAQs)
+   ========================================================================== */
+.accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.accordion-item.active {
+  border-color: rgba(245, 161, 107, 0.4);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1.35rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.accordion-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-fast);
+  color: var(--color-peach-500);
+  flex-shrink: 0;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
+  padding: 0 1.75rem;
+  color: var(--color-slate-300);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.accordion-item.active .accordion-body {
+  padding-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   25. Animated Counters UI
+   ========================================================================== */
+.counter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.counter-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 700;
+  color: var(--color-peach-500);
+  line-height: 1;
+}
+
+.counter-label {
+  font-size: 0.85rem;
+  color: var(--color-slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   26. Interactive Cards Mouse Spotlight Glow
+   ========================================================================== */
+.card-glow-spot {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glow-spot::after {
+  content: '';
+  position: absolute;
+  top: var(--glow-y, -100px);
+  left: var(--glow-x, -100px);
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 161, 107, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-glow-spot:hover::after {
+  opacity: 1;
+}
+
+/* Interactive Details Table / Grid */
+.details-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .details-grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

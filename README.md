@@ -3,7 +3,7 @@
 > **Collegiate Entrepreneurship & Startup Club**  
 > *Think Bold. Build Beyond. Ideas into Impact.*
 
-This is the production-ready website for **Indus Rise DTC**, crafted for student founders, builders, and innovators. Built with clean, accessible HTML5, responsive CSS3 design tokens, and lightweight vanilla JavaScript.
+This is the production-ready, multi-page website for **Indus Rise DTC**, crafted for student founders, builders, and innovators. Built with clean semantic HTML5, modern CSS3 design tokens, responsive layouts, interactive loading graphics, and lightweight vanilla JavaScript animations.
 
 ---
 
@@ -23,61 +23,72 @@ This is the production-ready website for **Indus Rise DTC**, crafted for student
 
 ---
 
-## 🚀 Key Features
-
-1. **Top Reading Progress Bar**: Real-time progress bar reflecting user scroll depth.
-2. **Fixed Navigation with Mobile Drawer**: Responsive glassmorphism navbar on desktop and a slide-out hamburger drawer on mobile devices with the official **Indus Rise DTC** logo.
-3. **Floating Section Dots**: Quick-jump dot navigation pinned to the right margin on desktop screens with active section tracking.
-4. **Hero Section**: Engaging value proposition, official floating emblem, cohort status badges, and quick CTA actions.
-5. **Marquee Ticker**: Continuous animated running ticker (`IDEATE · INNOVATE · BUILD · RISE · EMPOWER · LAUNCH · SCALE`).
-6. **Core Action Pillars**: Interactive cards for *Ideation*, *Innovation*, and *Growth*.
-7. **Filterable Events & Activities**: Interactive category filter (*Workshops*, *Competitions*, *Speaker Sessions*) with date and venue badges.
-8. **Vision & Mission**: Dual split-tone presentation cards emphasizing student empowerment.
-9. **Leadership & Faculty Showcase**: Spotlights the Faculty Coordinator advisory and student core leadership roles.
-10. **Interactive Membership Modal & Toast Feedback**: Accessible popup dialog form with branch, academic year, and interest selection, plus simulated submission feedback.
-11. **Floating Back-to-Top**: Smooth scroll-to-top button that appears after scrolling down.
-
----
-
-## 📁 File Structure
+## 📁 Multi-Page Architecture
 
 ```
 website/
-├── index.html              # Main semantic HTML5 document
+├── index.html              # Home Portal: Hero, ambient constellation canvas, marquee, ecosystem hubs
+├── about.html              # About Us: Origin story, 4 core tenets, interactive milestone timeline
+├── pillars.html            # What We Do: Deep dive into Ideation, Innovation & Growth + 4-Stage Roadmap
+├── events.html             # Events & Calendar: Pitch Tank '26 flagship, category filters, RSVP triggers
+├── vision.html             # Vision & Mission: 2030 Ecosystem blueprint, 5 pledges & founder manifesto
+├── team.html               # Leadership: Faculty advisory, Executive Board leads & core recruitment
+├── join.html               # Admissions: Cohort tracks, comprehensive application form, interactive FAQ accordion
 ├── css/
-│   └── style.css           # Complete design tokens, animations, responsive grid/flex layouts
+│   └── style.css           # Complete stylesheet, design tokens, preloader & component animations
 ├── js/
-│   └── main.js            # IntersectionObserver reveals, modal logic, nav tracking, filters
+│   └── main.js             # Preloader controller, particle canvas, animated counters, filters, accordion
+├── assets/
+│   └── logo.png            # Official Indus Rise DTC emblem
 └── README.md               # Documentation and deployment instructions
 ```
 
 ---
 
-## 💻 How to Run Locally
+## ✨ Animations & Interface Graphics
 
-Because this project is built with vanilla web technologies, there are **no heavy npm dependencies or build steps required**.
+1. **Interactive Branded Preloader**:
+   - Orbiting glowing rings pulsing around the Indus Rise logo with spinning gradients.
+   - Dynamic status phase updates (*"INITIALIZING ECOSYSTEM...", "CONNECTING FOUNDER NETWORK..."*).
+   - Real-time animated progress bar with smooth fade-out dismissal.
+2. **Ambient Constellation Particle Canvas**:
+   - Interactive HTML5 canvas with floating nodes and dynamic connecting vectors in navy and peach orange.
+   - Responds gently to mouse proximity and viewport resizing.
+3. **Animated Stat Counters**:
+   - Numbers (`150+`, `30+`, `12+`, `100%`) animate upward smoothly using cubic ease-out curves upon scrolling into view.
+4. **Card Spotlight Glow**:
+   - Cards track cursor coordinates (`--glow-x`, `--glow-y`) to cast a subtle, moving radial peach highlight on hover.
+5. **Interactive Accordion UI**:
+   - Smooth height transitions and animated rotating icons on the FAQs section in `join.html`.
+6. **Filterable Event Sprints**:
+   - Instant category filtering (*Workshops*, *Competitions*, *Speaker Sessions*, *Hackathons*) with animated card reveals.
+7. **Multi-Page Active Navigation Highlighting**:
+   - Automatically detects current URL path and assigns the `.active` indicator on desktop and mobile drawer navigation.
 
-### Option 1: VS Code Live Server (Recommended)
-1. Install the **Live Server** extension in VS Code.
+---
+
+## 💻 How to Run Locally in VS Code
+
+### Option 1: Live Server Extension (Recommended)
+1. Install **Live Server** in VS Code.
 2. Right-click `index.html` and choose **"Open with Live Server"**.
 
-### Option 2: Python HTTP Server
-Run the following command in this folder:
+### Option 2: Built-in Terminal Server
+Run in your VS Code terminal:
 ```bash
 python -m http.server 8000
 ```
 Then visit `http://localhost:8000` in your browser.
 
-### Option 3: Node.js (npx serve)
-```bash
-npx serve .
-```
-
 ---
 
-## 🌐 How to Deploy to GitHub Pages
+## 🌐 Deploy to GitHub Pages
 
-1. Push this repository to GitHub.
-2. Navigate to your repository's **Settings** → **Pages**.
-3. Under **Branch**, select `main` and folder `/ (root)`.
-4. Click **Save**. Your site will be live at `https://<username>.github.io/<repo-name>/` in 1–2 minutes!
+1. In VS Code terminal:
+   ```bash
+   git add .
+   git commit -m "Add multi-page architecture with loading animations and graphics"
+   git push -u origin main
+   ```
+2. On GitHub, verify in **Settings** → **Pages** that the branch is set to `main` and folder `/ (root)`.
+3. Your live site will automatically update at `https://beniwal0303.github.io/indus-rise/`!
