@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Indus Rise DTC — The premier collegiate entrepreneurship, startup, and innovation hub. Ideas into impact.">
-  <meta name="keywords" content="Indus Rise, Indus Rise DTC, entrepreneurship club, college startup club, student founders, ideation, innovation, pitch tank">
-  <title>Indus Rise DTC — Think Bold. Build Beyond.</title>
+  <meta name="description" content="Indus Rise DTC — Command Launchpad. Choose your destination to explore our collegiate startup ecosystem, student ventures, pitch competitions, and founder vault.">
+  <meta name="keywords" content="Indus Rise, Indus Rise DTC, entrepreneurship club, college startups, student ventures, pitch tank, founder vault, launchpad">
+  <title>Indus Rise DTC — Launchpad & Command Portal</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo.png">
@@ -28,7 +28,7 @@
       <img src="assets/logo.png" alt="Indus Rise Logo" class="preloader-logo">
     </div>
     <div class="preloader-text">
-      <span id="preloader-status-text">INITIALIZING ECOSYSTEM...</span>
+      <span id="preloader-status-text">INITIALIZING LAUNCHPAD...</span>
     </div>
     <div class="preloader-bar-wrap">
       <div id="preloader-progress-bar" class="preloader-bar"></div>
@@ -55,8 +55,10 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="pillars.html">What We Do</a></li>
+        <li><a href="startups.html">Startups</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a href="vision.html">Vision & Mission</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="vision.html">Vision</a></li>
         <li><a href="team.html">Team</a></li>
       </ul>
 
@@ -100,9 +102,21 @@
         </a>
       </li>
       <li>
+        <a href="startups.html">
+          <span>Startups & MVPs</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        </a>
+      </li>
+      <li>
         <a href="events.html">
-          <span>Events & Activities</span>
+          <span>Events & Pitch Tank</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </a>
+      </li>
+      <li>
+        <a href="resources.html">
+          <span>Founder Vault</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
         </a>
       </li>
       <li>
@@ -127,344 +141,346 @@
   </aside>
 
   <!-- ========================================================================
-       HERO SECTION WITH AMBIENT PARTICLES
+       COMMAND LAUNCHPAD HERO SECTION
        ======================================================================== -->
-  <section id="hero" class="hero-section">
+  <section class="launchpad-hero">
     <!-- Ambient Particle Canvas & Background Glow Graphics -->
     <div class="ambient-canvas-wrap" aria-hidden="true">
       <canvas id="ambient-canvas" class="ambient-canvas"></canvas>
-      <div class="glow-orb glow-orb-peach" style="width: 380px; height: 380px; top: 10%; right: 5%;"></div>
-      <div class="glow-orb glow-orb-navy" style="width: 440px; height: 440px; bottom: 5%; left: 5%;"></div>
+      <div class="glow-orb glow-orb-peach" style="width: 450px; height: 450px; top: -10%; right: 10%;"></div>
+      <div class="glow-orb glow-orb-navy" style="width: 500px; height: 500px; bottom: -10%; left: 10%;"></div>
     </div>
 
-    <div class="hero-container">
-      <!-- Left Column: Copy & CTAs -->
-      <div class="hero-content reveal">
-        <div class="badge-tag">
-          <span class="badge-dot"></span>
-          <span>IDEAS INTO IMPACT</span>
-        </div>
-
-        <h1 class="hero-headline">
-          Think Bold.<br>
-          <span class="highlight">Build Beyond.</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          The collegiate startup hub empowering student builders, innovators, and future founders. Turning campus curiosity into live, scalable ventures.
-        </p>
-
-        <div class="hero-cta-group">
-          <a href="about.html" class="btn btn-primary">
-            Explore Indus Rise
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-          <a href="events.html" class="btn btn-outline">
-            Upcoming Events
-          </a>
-        </div>
-
-        <a href="#ecosystem" class="scroll-cue">
-          <span class="scroll-arrow">↓</span>
-          <span>SCROLL TO EXPLORE</span>
-        </a>
+    <div class="launchpad-header-wrap">
+      <!-- Status Badge -->
+      <div class="command-status-bar reveal">
+        <span class="status-beacon"></span>
+        <span>INDUS COMMAND PORTAL // COHORT '26 ACTIVE // IDEAS INTO IMPACT</span>
       </div>
 
-      <!-- Right Column: Interactive Brand Showcase Canvas -->
-      <div class="hero-visual reveal reveal-delay-2">
-        <div class="visual-canvas card-glow-spot">
-          <div class="visual-card-top">
-            <span class="visual-metric-badge">● COHORT '26 ACTIVE</span>
-            <span style="font-size: 0.75rem; color: var(--color-slate-400);">ENTREPRENEURSHIP CELL</span>
-          </div>
+      <!-- Main Emblem -->
+      <div class="hero-emblem-wrap reveal" style="margin: 0 auto 1.5rem; width: 110px; height: 110px;">
+        <img src="assets/logo.png" alt="Indus Rise DTC Logo" class="hero-emblem-img" style="width: 80px; height: 80px;">
+      </div>
 
-          <div class="visual-center-art">
-            <div class="hero-emblem-wrap">
-              <img src="assets/logo.png" alt="Indus Rise DTC Logo" class="hero-emblem-img">
-            </div>
-            <h3 style="font-family: var(--font-heading); color: var(--color-white); font-size: 1.35rem; margin-top: 0.5rem; letter-spacing: 0.05em;">
-              INDUS RISE DTC
-            </h3>
-            <p style="font-size: 0.825rem; color: var(--color-slate-300); max-width: 280px;">
-              From raw problem statements to market-ready prototypes.
-            </p>
-          </div>
+      <h1 class="launchpad-title reveal">
+        Choose Your Sector.<br>
+        <span class="glow-word">Launch into Indus Rise.</span>
+      </h1>
 
-          <!-- Animated Stat Counters -->
-          <div class="visual-card-bottom">
-            <div class="stat-item counter-box">
-              <span class="stat-num" data-count="30" data-suffix="+">0</span>
-              <span class="stat-label">Events & Sprints</span>
-            </div>
-            <div class="stat-item counter-box">
-              <span class="stat-num" data-count="150" data-suffix="+">0</span>
-              <span class="stat-label">Active Members</span>
-            </div>
-            <div class="stat-item counter-box">
-              <span class="stat-num" data-count="12" data-suffix="+">0</span>
-              <span class="stat-label">MVPs Built</span>
-            </div>
-          </div>
-        </div>
+      <p class="launchpad-subtitle reveal">
+        Welcome to the central command hub of Indus Rise DTC. Select any sector below to explore our story, frameworks, live student startups, upcoming pitch battles, founder vault, and membership admissions.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="portal-filter-bar reveal">
+        <button class="portal-filter-pill active" data-portal-filter="all">All Sectors (8)</button>
+        <button class="portal-filter-pill" data-portal-filter="core">Origins & Core</button>
+        <button class="portal-filter-pill" data-portal-filter="ventures">Startups & Events</button>
+        <button class="portal-filter-pill" data-portal-filter="toolkit">Founder Toolkit</button>
+        <button class="portal-filter-pill" data-portal-filter="network">Council & Join</button>
       </div>
     </div>
   </section>
 
   <!-- ========================================================================
-       MARQUEE TICKER RIBBON
+       PORTAL GATEWAY GRID (CHOOSE WHERE TO GO - ONE-CLICK OPEN)
+       ======================================================================== -->
+  <section class="portal-gateway-section">
+    <div class="portal-gateway-grid">
+
+      <!-- PORTAL 1: ABOUT US -->
+      <a href="about.html" class="portal-card card-glow-spot reveal reveal-delay-1" data-portal-category="core">
+        <div class="portal-card-media">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="About Indus Rise DTC" class="portal-card-img" loading="lazy">
+          <div class="portal-card-media-overlay"></div>
+          <span class="portal-card-index">01 // ORIGINS</span>
+          <span class="portal-card-badge">FOUNDING STORY</span>
+        </div>
+        <div class="portal-card-body">
+          <div class="portal-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h2 class="portal-card-title">About Indus Rise</h2>
+          <p class="portal-card-desc">
+            Explore our origins, core collegiate tenets, culture of peer-driven innovation, and the interactive milestone timeline.
+          </p>
+          <div class="portal-card-tags">
+            <span class="portal-card-tag">Founding Story</span>
+            <span class="portal-card-tag">Core Tenets</span>
+            <span class="portal-card-tag">Timeline</span>
+          </div>
+          <div class="portal-card-action">
+            <span>Enter Sector</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- PORTAL 2: WHAT WE DO (PILLARS) -->
+      <a href="pillars.html" class="portal-card card-glow-spot reveal reveal-delay-2" data-portal-category="core">
+        <div class="portal-card-media">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="What We Do & Pillars" class="portal-card-img" loading="lazy">
+          <div class="portal-card-media-overlay"></div>
+          <span class="portal-card-index">02 // FRAMEWORKS</span>
+          <span class="portal-card-badge">3 PILLARS</span>
+        </div>
+        <div class="portal-card-body">
+          <div class="portal-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h2 class="portal-card-title">What We Do</h2>
+          <p class="portal-card-desc">
+            Deep dive into Ideation, Innovation, and Growth. Learn our 4-stage founder lifecycle from problem discovery to validated scale.
+          </p>
+          <div class="portal-card-tags">
+            <span class="portal-card-tag">Ideation</span>
+            <span class="portal-card-tag">Build & MVP</span>
+            <span class="portal-card-tag">Scale</span>
+          </div>
+          <div class="portal-card-action">
+            <span>Enter Sector</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- PORTAL 3: STARTUP SHOWCASE (NEW) -->
+      <a href="startups.html" class="portal-card card-glow-spot reveal reveal-delay-3" data-portal-category="ventures">
+        <div class="portal-card-media">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Student Startups & MVPs" class="portal-card-img" loading="lazy">
+          <div class="portal-card-media-overlay"></div>
+          <span class="portal-card-index">03 // VENTURES</span>
+          <span class="portal-card-badge" style="background: #22c55e; color: #09101f;">LIVE DEMOS</span>
+        </div>
+        <div class="portal-card-body">
+          <div class="portal-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+            </svg>
+          </div>
+          <h2 class="portal-card-title">Student Startups & MVPs</h2>
+          <p class="portal-card-desc">
+            Explore live startups created by student builders at Indus Rise across AI agents, FinTech, campus logistics, and clean tech.
+          </p>
+          <div class="portal-card-tags">
+            <span class="portal-card-tag">6+ Startups</span>
+            <span class="portal-card-tag">Live MVPs</span>
+            <span class="portal-card-tag">Pitch Decks</span>
+          </div>
+          <div class="portal-card-action">
+            <span>Enter Sector</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- PORTAL 4: EVENTS & PITCH TANK -->
+      <a href="events.html" class="portal-card card-glow-spot reveal reveal-delay-4" data-portal-category="ventures">
+        <div class="portal-card-media">
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Events & Pitch Tank" class="portal-card-img" loading="lazy">
+          <div class="portal-card-media-overlay"></div>
+          <span class="portal-card-index">04 // STAGE</span>
+          <span class="portal-card-badge">₹1L+ PRIZE POOL</span>
+        </div>
+        <div class="portal-card-body">
+          <div class="portal-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h2 class="portal-card-title">Events & Pitch Tank '26</h2>
+          <p class="portal-card-desc">
+            Join Pitch Tank '26, 48-hour prototype hackathons, venture capital panels, and hands-on founder masterclasses.
+          </p>
+          <div class="portal-card-tags">
+            <span class="portal-card-tag">Pitch Tank</span>
+            <span class="portal-card-tag">Build Sprints</span>
+            <span class="portal-card-tag">RSVP Active</span>
+          </div>
+          <div class="portal-card-action">
+            <span>Enter Sector</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- PORTAL 5: FOUNDER VAULT & TOOLKIT (NEW) -->
+      <a href="resources.html" class="portal-card card-glow-spot reveal reveal-delay-1" data-portal-category="toolkit">
+        <div class="portal-card-media">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Founder Vault & Toolkit" class="portal-card-img" loading="lazy">
+          <div class="portal-card-media-overlay"></div>
+          <span class="portal-card-index">05 // VAULT</span>
+          <span class="portal-card-badge">$10K+ PERKS</span>
+        </div>
+        <div class="portal-card-body">
+          <div class="portal-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              <line x1="12" y1="11" x2="12" y2="17"></line>
+              <line x1="9" y1="14" x2="15" y2="14"></line>
+            </svg>
+          </div>
+          <h2 class="portal-card-title">Founder Vault & Toolkit</h2>
+          <p class="portal-card-desc">
+            Download free investor pitch templates, cap table spreadsheets, co-founder MOUs, and claim student cloud credits.
+          </p>
+          <div class="portal-card-tags">
+            <span class="portal-card-tag">Pitch Decks</span>
+            <span class="portal-card-tag">Cap Table</span>
+            <span class="portal-card-tag">Cloud Credits</span>
+          </div>
+          <div class="portal-card-action">
+            <span>Enter Sector</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- PORTAL 6: VISION & 2030 MANIFESTO -->
+      <a href="vision.html" class="portal-card card-glow-spot reveal reveal-delay-2" data-portal-category="toolkit">
+        <div class="portal-card-media">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Vision & 2030 Manifesto" class="portal-card-img" loading="lazy">
+          <div class="portal-card-media-overlay"></div>
+          <span class="portal-card-index">06 // HORIZON</span>
+          <span class="portal-card-badge">2030 ROADMAP</span>
+        </div>
+        <div class="portal-card-body">
+          <div class="portal-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+          </div>
+          <h2 class="portal-card-title">Vision & Manifesto</h2>
+          <p class="portal-card-desc">
+            Read our ecosystem pledges, long-range 2030 objectives, institutional advisory framework, and founder manifesto.
+          </p>
+          <div class="portal-card-tags">
+            <span class="portal-card-tag">5 Pledges</span>
+            <span class="portal-card-tag">2030 Horizon</span>
+            <span class="portal-card-tag">Manifesto</span>
+          </div>
+          <div class="portal-card-action">
+            <span>Enter Sector</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- PORTAL 7: LEADERSHIP TEAM -->
+      <a href="team.html" class="portal-card card-glow-spot reveal reveal-delay-3" data-portal-category="network">
+        <div class="portal-card-media">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Executive Council & Advisory" class="portal-card-img" loading="lazy">
+          <div class="portal-card-media-overlay"></div>
+          <span class="portal-card-index">07 // PEOPLE</span>
+          <span class="portal-card-badge">COUNCIL '26</span>
+        </div>
+        <div class="portal-card-body">
+          <div class="portal-card-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h2 class="portal-card-title">Leadership & Advisory</h2>
+          <p class="portal-card-desc">
+            Meet the faculty advisors, student executive council leads, domain heads, and open council recruitment roles.
+          </p>
+          <div class="portal-card-tags">
+            <span class="portal-card-tag">Faculty Advisory</span>
+            <span class="portal-card-tag">Student Leads</span>
+            <span class="portal-card-tag">Join Council</span>
+          </div>
+          <div class="portal-card-action">
+            <span>Enter Sector</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- PORTAL 8: JOIN INDUS -->
+      <a href="join.html" class="portal-card card-glow-spot reveal reveal-delay-4" data-portal-category="network" style="border-color: rgba(245, 161, 107, 0.4); background: rgba(245, 161, 107, 0.08);">
+        <div class="portal-card-media">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Join Indus Rise DTC" class="portal-card-img" loading="lazy">
+          <div class="portal-card-media-overlay"></div>
+          <span class="portal-card-index">08 // ADMISSIONS</span>
+          <span class="portal-card-badge" style="background: var(--color-peach-500); color: var(--color-navy-950);">ENROLLING NOW</span>
+        </div>
+        <div class="portal-card-body">
+          <div class="portal-card-icon-wrap" style="background: var(--color-peach-500); color: var(--color-navy-950);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <h2 class="portal-card-title">Join Cohort 2026</h2>
+          <p class="portal-card-desc">
+            Submit your application across 4 cohort tracks: Engineering, Product Design, Growth Operations, or Founder Incubation.
+          </p>
+          <div class="portal-card-tags">
+            <span class="portal-card-tag">4 Tracks</span>
+            <span class="portal-card-tag">Cohort '26</span>
+            <span class="portal-card-tag">All Branches</span>
+          </div>
+          <div class="portal-card-action" style="color: var(--color-peach-500); font-weight: 700;">
+            <span>Submit Application</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       LIVE ECOSYSTEM METRICS TICKER
        ======================================================================== -->
   <div class="ticker-wrap" aria-hidden="true">
     <div class="ticker-track">
-      <div class="ticker-item">IDEATE <span class="dot"></span> INNOVATE <span class="dot"></span> BUILD <span class="dot"></span> RISE <span class="dot"></span> EMPOWER <span class="dot"></span> LAUNCH <span class="dot"></span> VALIDATE <span class="dot"></span> SCALE</div>
-      <div class="ticker-item">IDEATE <span class="dot"></span> INNOVATE <span class="dot"></span> BUILD <span class="dot"></span> RISE <span class="dot"></span> EMPOWER <span class="dot"></span> LAUNCH <span class="dot"></span> VALIDATE <span class="dot"></span> SCALE</div>
-      <div class="ticker-item">IDEATE <span class="dot"></span> INNOVATE <span class="dot"></span> BUILD <span class="dot"></span> RISE <span class="dot"></span> EMPOWER <span class="dot"></span> LAUNCH <span class="dot"></span> VALIDATE <span class="dot"></span> SCALE</div>
+      <div class="ticker-item">● 150+ ACTIVE STUDENT INNOVATORS <span class="dot"></span> 30+ HACKATHONS & SPRINTS <span class="dot"></span> 12+ LIVE MVPS <span class="dot"></span> ₹15,00,000+ GRANTS SECURED <span class="dot"></span> 100% STUDENT-LED <span class="dot"></span> COHORT '26 ADMISSIONS OPEN</div>
+      <div class="ticker-item">● 150+ ACTIVE STUDENT INNOVATORS <span class="dot"></span> 30+ HACKATHONS & SPRINTS <span class="dot"></span> 12+ LIVE MVPS <span class="dot"></span> ₹15,00,000+ GRANTS SECURED <span class="dot"></span> 100% STUDENT-LED <span class="dot"></span> COHORT '26 ADMISSIONS OPEN</div>
+      <div class="ticker-item">● 150+ ACTIVE STUDENT INNOVATORS <span class="dot"></span> 30+ HACKATHONS & SPRINTS <span class="dot"></span> 12+ LIVE MVPS <span class="dot"></span> ₹15,00,000+ GRANTS SECURED <span class="dot"></span> 100% STUDENT-LED <span class="dot"></span> COHORT '26 ADMISSIONS OPEN</div>
     </div>
   </div>
-
-  <!-- ========================================================================
-       ECOSYSTEM SECTION: DEDICATED HUBS FOR INNOVATORS
-       ======================================================================== -->
-  <section id="ecosystem" class="section theme-dark">
-    <div class="section-container">
-      <div class="section-header reveal">
-        <span class="section-tag">00 — EXPLORE THE ECOSYSTEM</span>
-        <h2 class="section-title">Everything you need to launch.</h2>
-        <p class="section-desc">
-          Navigate through our dedicated portals to explore our story, frameworks, upcoming pitch competitions, leadership, and membership.
-        </p>
-      </div>
-
-      <div class="section-preview-grid">
-        <!-- Portal Card 1: About -->
-        <a href="about.html" class="preview-card card-glow-spot reveal reveal-delay-1">
-          <div class="preview-card-header">
-            <div class="preview-card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-              </svg>
-            </div>
-            <span class="preview-card-badge">STORY & ETHOS</span>
-          </div>
-          <h3 class="preview-card-title">About Indus Rise</h3>
-          <p class="preview-card-desc">
-            Discover our founding story, collegiate origins, core tenets, and interactive milestone timeline.
-          </p>
-          <span class="preview-card-link">
-            Explore Story & Milestones →
-          </span>
-        </a>
-
-        <!-- Portal Card 2: What We Do -->
-        <a href="pillars.html" class="preview-card card-glow-spot reveal reveal-delay-2">
-          <div class="preview-card-header">
-            <div class="preview-card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
-            </div>
-            <span class="preview-card-badge">3 CORE PILLARS</span>
-          </div>
-          <h3 class="preview-card-title">What We Do</h3>
-          <p class="preview-card-desc">
-            Deep dive into Ideation, Innovation, and Growth. Learn how we take projects from problem statements to funded MVPs.
-          </p>
-          <span class="preview-card-link">
-            Explore 3 Pillars & Frameworks →
-          </span>
-        </a>
-
-        <!-- Portal Card 3: Events -->
-        <a href="events.html" class="preview-card card-glow-spot reveal reveal-delay-3">
-          <div class="preview-card-header">
-            <div class="preview-card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-            </div>
-            <span class="preview-card-badge">FLAGSHIP '26</span>
-          </div>
-          <h3 class="preview-card-title">Events & Summits</h3>
-          <p class="preview-card-desc">
-            Participate in Pitch Tank '26, 48-hour MVP build sprints, guest AMAs with alumni founders, and masterclasses.
-          </p>
-          <span class="preview-card-link">
-            View Calendar & RSVP →
-          </span>
-        </a>
-
-        <!-- Portal Card 4: Vision & Mission -->
-        <a href="vision.html" class="preview-card card-glow-spot reveal reveal-delay-1">
-          <div class="preview-card-header">
-            <div class="preview-card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-              </svg>
-            </div>
-            <span class="preview-card-badge">2030 ROADMAP</span>
-          </div>
-          <h3 class="preview-card-title">Vision & Mission</h3>
-          <p class="preview-card-desc">
-            Read our ecosystem manifesto, 4 tangible commitments to student founders, and institutional advisory ecosystem.
-          </p>
-          <span class="preview-card-link">
-            Read Our Manifesto →
-          </span>
-        </a>
-
-        <!-- Portal Card 5: Leadership Team -->
-        <a href="team.html" class="preview-card card-glow-spot reveal reveal-delay-2">
-          <div class="preview-card-header">
-            <div class="preview-card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <span class="preview-card-badge">STUDENT COUNCIL</span>
-          </div>
-          <h3 class="preview-card-title">Leadership & Advisory</h3>
-          <p class="preview-card-desc">
-            Meet the faculty advisors, student executive council leads, and technical team driving club initiatives.
-          </p>
-          <span class="preview-card-link">
-            Meet the Team →
-          </span>
-        </a>
-
-        <!-- Portal Card 6: Join Us -->
-        <a href="join.html" class="preview-card card-glow-spot reveal reveal-delay-3" style="border-color: rgba(245, 161, 107, 0.4); background: rgba(245, 161, 107, 0.08);">
-          <div class="preview-card-header">
-            <div class="preview-card-icon" style="background: var(--color-peach-500); color: var(--color-navy-950);">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </div>
-            <span class="preview-card-badge" style="background: var(--color-peach-500); color: var(--color-navy-950);">NOW ENROLLING</span>
-          </div>
-          <h3 class="preview-card-title">Join Indus Rise DTC</h3>
-          <p class="preview-card-desc">
-            Apply to join our cohort tracks in Engineering, Product Design, Growth Operations, or Founder Incubation.
-          </p>
-          <span class="preview-card-link" style="color: var(--color-peach-500); font-weight: 700;">
-            Apply for Membership →
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       FEATURED HIGHLIGHT: WHAT WE DO OVERVIEW
-       ======================================================================== -->
-  <section class="section theme-peach">
-    <div class="section-container">
-      <div class="about-grid">
-        <div class="about-text-col reveal">
-          <span class="section-tag">01 — WHO WE ARE</span>
-          <h2 class="section-title">Big ideas begin with curious minds.</h2>
-          <p class="section-desc">
-            We bring together students who want to explore entrepreneurship, turn ideas into action, and build things that matter.
-          </p>
-          <p style="color: var(--color-slate-700); font-size: 1rem;">
-            Whether you want to launch a tech venture, design innovative consumer goods, or discover how early-stage ventures operate, Indus Rise DTC provides the community, resources, and peer network to accelerate your learning curve.
-          </p>
-          <div style="margin-top: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="about.html" class="btn btn-dark">
-              Read Our Full Story →
-            </a>
-            <a href="pillars.html" class="btn btn-outline" style="border-color: var(--color-navy-900); color: var(--color-navy-900);">
-              Explore Initiatives
-            </a>
-          </div>
-        </div>
-
-        <div class="about-features reveal reveal-delay-2">
-          <div class="about-feature-item card-glow-spot">
-            <div class="about-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 class="about-feature-title">Student-First Community</h4>
-              <p class="about-feature-desc">Form interdisciplinary teams combining engineering, design, marketing, and business strategy.</p>
-            </div>
-          </div>
-
-          <div class="about-feature-item card-glow-spot">
-            <div class="about-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-              </svg>
-            </div>
-            <div>
-              <h4 class="about-feature-title">Actionable Mentorship</h4>
-              <p class="about-feature-desc">Regular interactive sessions with startup founders, VC associates, and alumni entrepreneurs.</p>
-            </div>
-          </div>
-
-          <div class="about-feature-item card-glow-spot">
-            <div class="about-feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            </div>
-            <div>
-              <h4 class="about-feature-title">Zero-to-One Mindset</h4>
-              <p class="about-feature-desc">We emphasize rapid user testing, market feedback loops, and customer discovery over boring theory.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       CALL TO ACTION: JOIN INDUS BANNER
-       ======================================================================== -->
-  <section class="section theme-dark" style="padding-top: 4rem;">
-    <div class="section-container">
-      <div class="cta-box reveal">
-        <div class="badge-tag" style="background: rgba(245, 161, 107, 0.2);">
-          <span>ADMISSIONS & COHORT REGISTRATION</span>
-        </div>
-        <h2 class="cta-headline">Ready to turn your ambition into action?</h2>
-        <p class="cta-subtitle">
-          Whether you have a breakthrough concept or simply want to learn how modern ventures are created from scratch, Indus Rise is your launching pad.
-        </p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-          <a href="join.html" class="btn btn-primary" style="padding: 0.85rem 2.2rem; font-size: 1.05rem;">
-            Join Indus Rise Today
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-          <button class="btn btn-outline open-join-modal" style="padding: 0.85rem 1.8rem; font-size: 1.05rem;">
-            Quick Apply Modal
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ========================================================================
        FOOTER
@@ -481,47 +497,44 @@
             </div>
           </div>
           <p class="footer-desc">
-            The collegiate entrepreneurship and innovation hub. Think bold. Build beyond. Ideas into impact.
+            The collegiate entrepreneurship and innovation hub. Think bold. Build beyond. Turning ideas into impact.
           </p>
         </div>
 
         <div class="footer-nav-col">
-          <h5>Navigation</h5>
+          <h5>Core Hubs</h5>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Indus Rise</a></li>
+            <li><a href="index.html">Command Launchpad</a></li>
+            <li><a href="about.html">About & Origins</a></li>
             <li><a href="pillars.html">What We Do</a></li>
-            <li><a href="events.html">Upcoming Events</a></li>
-            <li><a href="vision.html">Vision & Mission</a></li>
-            <li><a href="team.html">Leadership</a></li>
-            <li><a href="join.html">Join Indus</a></li>
+            <li><a href="vision.html">Vision & 2030 Manifesto</a></li>
           </ul>
         </div>
 
         <div class="footer-nav-col">
-          <h5>Core Pillars</h5>
+          <h5>Ventures & Vault</h5>
           <ul class="footer-links">
-            <li><a href="pillars.html">Ideation & Discovery</a></li>
-            <li><a href="pillars.html">MVP Development</a></li>
-            <li><a href="pillars.html">Venture Pitching</a></li>
-            <li><a href="events.html">Pitch Tank '26</a></li>
+            <li><a href="startups.html">Student Startups & MVPs</a></li>
+            <li><a href="events.html">Events & Pitch Tank</a></li>
+            <li><a href="resources.html">Founder Vault & Toolkit</a></li>
+            <li><a href="team.html">Leadership Council</a></li>
           </ul>
         </div>
 
         <div class="footer-nav-col">
-          <h5>Connect</h5>
+          <h5>Connect & Apply</h5>
           <ul class="footer-links">
+            <li><a href="join.html">Join Indus Cohort '26</a></li>
             <li><a href="mailto:indusrise@college.edu">indusrise@college.edu</a></li>
             <li><a href="#">LinkedIn Community</a></li>
             <li><a href="#">Instagram @indusrise_dtc</a></li>
-            <li><a href="#">GitHub Organization</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Indus Rise DTC. All rights reserved. Built with pride by the Student Tech Team.</p>
-        <p style="color: var(--color-slate-500);">Collegiate Entrepreneurship & Innovation Cell</p>
+        <p>&copy; 2026 Indus Rise DTC. All rights reserved. Collegiate Entrepreneurship & Innovation Cell.</p>
+        <p style="color: var(--color-slate-500);">Designed for student builders, innovators, and future founders.</p>
       </div>
     </div>
   </footer>
@@ -532,77 +545,6 @@
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
-
-  <!-- Modal Dialog: Quick Application Form -->
-  <div id="join-modal" class="modal-overlay" aria-modal="true" role="dialog" aria-labelledby="modal-heading">
-    <div class="modal-dialog">
-      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
-      <div class="modal-header">
-        <h3 id="modal-heading" class="modal-title">Join Indus Rise DTC</h3>
-        <p class="modal-desc">Fill in your details below to express your interest in joining our student founder & innovation cohort.</p>
-      </div>
-
-      <form id="indus-join-form">
-        <div class="form-group">
-          <label class="form-label" for="full-name">Full Name *</label>
-          <input type="text" id="full-name" class="form-input" placeholder="e.g. Alex Sharma" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="email">College Email Address *</label>
-          <input type="email" id="email" class="form-input" placeholder="e.g. alex@student.college.edu" required>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div class="form-group">
-            <label class="form-label" for="academic-year">Academic Year *</label>
-            <select id="academic-year" class="form-select" required>
-              <option value="" disabled selected>Select Year</option>
-              <option value="1st Year">1st Year</option>
-              <option value="2nd Year">2nd Year</option>
-              <option value="3rd Year">3rd Year</option>
-              <option value="4th Year">4th Year</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="department">Branch / Dept *</label>
-            <input type="text" id="department" class="form-input" placeholder="e.g. CSE / ECE / BBA" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="interest">Primary Domain of Interest *</label>
-          <select id="interest" class="form-select" required>
-            <option value="" disabled selected>Choose your interest</option>
-            <option value="Tech / Product Development">Technical / Code / MVP Building</option>
-            <option value="Design & UI/UX">Design & Creative Media</option>
-            <option value="Operations & Events">Event Operations & Management</option>
-            <option value="Marketing & Outreach">PR, Socials & Community</option>
-            <option value="Aspiring Founder">I have an idea / Aspiring Founder</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="pitch">Tell us briefly about what excites you about startups:</label>
-          <textarea id="pitch" class="form-textarea" placeholder="What are you curious about or building? (Optional)"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; padding: 0.85rem;">
-          Submit Membership Application ↗
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Toast Notification Feedback -->
-  <div id="toast-notice" class="toast-notice" role="status" aria-live="polite">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5A16B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-    </svg>
-    <span class="toast-text">Application submitted successfully!</span>
-  </div>
 
   <!-- Main JavaScript File -->
   <script src="js/main.js"></script>

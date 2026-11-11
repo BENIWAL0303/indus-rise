@@ -428,6 +428,167 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --------------------------------------------------------------------------
+     14. Launchpad Portal Category Filter (index.html)
+     ----------------------------------------------------------------------- */
+  const portalFilterPills = document.querySelectorAll('[data-portal-filter]');
+  const portalCards = document.querySelectorAll('.portal-card');
+
+  portalFilterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      portalFilterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const filterVal = pill.getAttribute('data-portal-filter');
+
+      portalCards.forEach(card => {
+        const category = card.getAttribute('data-portal-category');
+        if (filterVal === 'all' || category === filterVal) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     15. Startup Showcase Category Filter (startups.html)
+     ----------------------------------------------------------------------- */
+  const startupFilterPills = document.querySelectorAll('[data-startup-filter]');
+  const startupCards = document.querySelectorAll('.startup-card');
+
+  startupFilterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      startupFilterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const filterVal = pill.getAttribute('data-startup-filter');
+
+      startupCards.forEach(card => {
+        const category = card.getAttribute('data-startup-category');
+        if (filterVal === 'all' || category === filterVal) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     16. Founder Vault Category Filter (resources.html)
+     ----------------------------------------------------------------------- */
+  const resourceFilterPills = document.querySelectorAll('[data-resource-filter]');
+  const resourceCards = document.querySelectorAll('.resource-card');
+
+  resourceFilterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      resourceFilterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const filterVal = pill.getAttribute('data-resource-filter');
+
+      resourceCards.forEach(card => {
+        const category = card.getAttribute('data-resource-category');
+        if (filterVal === 'all' || category === filterVal) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     17. Pitch Deck Modal Viewer (startups.html)
+     ----------------------------------------------------------------------- */
+  const pitchModal = document.getElementById('pitch-modal');
+  const closePitchBtn = document.getElementById('close-pitch-modal');
+  const openPitchBtns = document.querySelectorAll('.open-pitch-modal');
+  const pitchHeading = document.getElementById('pitch-modal-heading');
+  const pitchSub = document.getElementById('pitch-modal-sub');
+  const downloadDeckBtn = document.getElementById('download-deck-btn');
+
+  openPitchBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const startupTitle = btn.getAttribute('data-startup-title') || 'Startup';
+      const deckName = btn.getAttribute('data-startup-deck') || 'Pitch Deck';
+
+      if (pitchHeading) pitchHeading.textContent = `${startupTitle} Pitch Deck`;
+      if (pitchSub) pitchSub.textContent = `Viewing executive summary: ${deckName}`;
+
+      if (pitchModal) {
+        pitchModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  if (closePitchBtn && pitchModal) {
+    closePitchBtn.addEventListener('click', () => {
+      pitchModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    pitchModal.addEventListener('click', (e) => {
+      if (e.target === pitchModal) {
+        pitchModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  if (downloadDeckBtn) {
+    downloadDeckBtn.addEventListener('click', () => {
+      if (pitchModal) pitchModal.classList.remove('active');
+      document.body.style.overflow = '';
+      showToast('📥 Downloading Pitch Deck (.PDF)... Access granted!');
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     18. Vault Download & Demo Triggers
+     ----------------------------------------------------------------------- */
+  const vaultDownloadBtns = document.querySelectorAll('.trigger-vault-download');
+  vaultDownloadBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const resourceName = btn.getAttribute('data-resource-name') || 'Resource File';
+      showToast(`📥 Initializing download for: ${resourceName}`);
+    });
+  });
+
+  const demoToastBtns = document.querySelectorAll('.trigger-demo-toast');
+  demoToastBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      showToast('🚀 Access requested! You have been placed on the VIP Founder priority queue.');
+    });
+  });
+
+  /* --------------------------------------------------------------------------
      14. Ambient Constellation Particle Canvas Animation
      ----------------------------------------------------------------------- */
   const canvas = document.getElementById('ambient-canvas');
